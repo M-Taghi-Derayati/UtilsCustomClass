@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 enum class TypefaceEnum {
-    Normal, Light, Bold, En
+    Normal,Medium, Light, Bold, En
 }
 
 class Utils {
@@ -25,15 +25,19 @@ class Utils {
         private val cache = SimpleArrayMap<String, Typeface>()
 
         private fun setFontNormal(mContext: Context): Typeface {
-            return getTypeFace(mContext, "RANYekanRegularMobile(FaNum)")
+            return getTypeFace(mContext, "IRANSansMobile")
         }
 
         private fun setFontLight(mContext: Context): Typeface {
-            return getTypeFace(mContext, "IRANYekanLightMobile(FaNum)")
+            return getTypeFace(mContext, "IRANSansMobile_Light")
         }
 
         private fun setFontBold(mContext: Context): Typeface {
-            return getTypeFace(mContext, "IRANYekanMobileBold(FaNum)")
+            return getTypeFace(mContext, "IRANSansMobile_Bold")
+        }
+
+        private fun setFontMedium(mContext: Context): Typeface {
+            return getTypeFace(mContext, "IRANSansMobile_Medium")
         }
 
         private fun setFontEn(mContext: Context): Typeface {
@@ -76,6 +80,7 @@ class Utils {
                     TypefaceEnum.Normal -> setFontNormal(mContext)
                     TypefaceEnum.Light -> setFontLight(mContext)
                     TypefaceEnum.Bold -> setFontBold(mContext)
+                    TypefaceEnum.Medium -> setFontMedium(mContext)
                     TypefaceEnum.En -> setFontEn(mContext)
                 }
 
